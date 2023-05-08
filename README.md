@@ -35,6 +35,9 @@ Na pasta "ATP" encontrasse todos os arquivos necessarios e tambem um arquivo Rea
 * Apos carregar o arquivo, será exibido na tela algumas informações sobre o arquivo. O tempo do ATP mostrado é o tempo necessario na simulação do ATP para acomodar toda oscilografia.
 * Abra um sistema no ATP para realizar a simulação e configure o tempo maximo e o timestep desejado (o timestep pode ser qualquer um, desde que maior que o da oscilografia).
 * No exemplo fornecido em ATP/Exemplo, é utilizado um bloco do models junto com uma fonte de corrente para realizar a simulação da inserção da oscilografia. Copie todo esse conjunto para o sistema desejado. Este bloco do models fornece informação de tensão e recebe informação de corrente do Software PNRF_ATP.
+* Apos configurado o sistema, inicie a simulação do ATP. Essa simulação deve ser parada com a mensagem "esperando segundo programa responder".
+* Apos isso, no software PNRF_ATP, clique em ConnectATP e logo apos em Run. A simulação deve seguir rodando normalmente.
 * É importante lembrar que é possivel alterrar a frequencia e a amplitude da oscilografia fornecida no .pnrf modificando os valores no menu ATP/Settings.
 * É importante lembrar que o software apenas insere a corrente de LF.
 * A inserção da corrente ocorre pela sincronização da tensão fornecida ao bloco models e a tensão na oscilografia.
+* É possivel configurar o tempo de inicio da FAI dentro do bloco models na opção tstart.
