@@ -1,0 +1,82 @@
+#------------------------------------------------------------------#
+# Arquivo: Makefile_MC                                             #
+# Propósito: Compilar e adicionar novas funções ao ATP             #
+# Desenvolvido por Adriano C. Marchesan e Leyla Kräulich           #
+#------------------------------------------------------------------#
+
+#------------------- Definição de compiladores --------------------#
+
+CC = gcc.exe
+FOR = g77.exe
+
+#--------------------------- Diretórios ---------------------------#
+
+# MYDOCS contém os arquivos a serem adicionados e a subrotina 
+# "fgnmod.f" alterada para acessar as novas funções
+MYDOCS = C:/Users/Aldair/Documents/ATPdata/mytpbig
+
+# ATPMINGW contém as bibliotecas e arquivos do ATP
+ATPMINGW = C:/ATP/atpmingw/make
+
+# Diretório de Destino do ATP personalizado: mytpbig.exe
+IMAGE  = $(MYDOCS)/mytpbig.exe
+
+#-------------------- Arquivos objetos do ATP ---------------------#
+
+OBJECTS = analyt.o \
+          comtac.o \
+          devt69.o \
+          dimdef.o \
+          fgnmod.o \
+          hopcod.o \
+          newmods.o \
+          user10.o \
+          usernl.o \
+          usrfun.o 
+
+
+#----------------- Arquivos objetos adicionados -------------------#
+
+MYOBJECTS = teste_foreign_model.o
+
+#------------------------ Arquivos do ATP -------------------------#
+          
+INSFILE = blkcom.ins \
+          comta1.ins \
+          comta2.ins \
+          comta3.ins \
+          deksal.ins \
+          dekspy.ins \
+          sixty4.ins \
+          space2.ins \
+          tacsar.ins
+
+#------------- Definições requeridas para compilação --------------#
+
+CFLAGS = -DUNDERSCORE -O2
+FFLAGS = -O2
+
+#----------------------- Bibliotecas do ATP -----------------------#
+
+LIBRARY = $(ATPMINGW)/tpbig.a $(ATPMINGW)/dismg7.a -lgdi32 \
+	-L"$(ATPMINGW)/MinGW/lib"
+
+#------------- Compilação e encadeamento de arquivos --------------#
+
+all:	$(IMAGE)
+.f.o:
+	$(FOR) -c $(FFLAGS) $<
+.c.o:
+	$(CC) -c $(CFLAGS) $<
+$(IMAGE) : $(OBJECTS) $(MYOBJECTS) $(INSFILE)
+	$(FOR) -s -o $(IMAGE) $(OBJECTS) $(MYOBJECTS) $(LIBRARY)
+
+teste_foreign_model.o: $(MYDOCS)\teste_foreign_model.cpp 
+	$(CC) -c $(CFLAGS) $(MYDOCS)\teste_foreign_model.cpp
+
+fgnmod.o: $(MYDOCS)\fgnmod.f
+	$(FOR) -c $(FFLAGS) $(MYDOCS)\fgnmod.f
+
+
+
+#------------------------------------------------------------------#

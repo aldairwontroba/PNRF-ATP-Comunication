@@ -1,0 +1,39 @@
+
+Passo a passo para instalação completa do ATP recompilado:
+
+	>>: Instale o ATP "InstATP124.exe" no caminho "C:\ATP" (deixa todas opções marcadas)							
+	
+	>>: Instale o "ATPDraw73_Install.zip" no caminho "C:\ATP\ATPDraw" (a pasta ja vai existir, instala em cima)
+	
+	>>: Instale o "ATP124_lib.exe"
+
+	>>: Copie os arquivos "fgnmod.f" e "teste_foreign_model.cpp" para a pasta "ATPdata\mytpbig" (que está em documentos do usuario). Se não axistir esta pasta, abra o ATPDraw que ele vai criar elas.
+	
+	>>: Copie o arquivo "Makefile_FM" para a pasta "C:\ATP\atpmingw\make"
+	
+	>>: Abra esse arquivo "Makefile_FM" com bloco de notas e edite o caminho de MYDOCS, (apenas substitua o nome de usuario para o seu usuario)
+
+MUITO IMPORTANTE:
+	não substitua os arquivos ao copiar para a pasta a seguir, apenas cole e ignore os arquivos iguais.
+
+	>>: Na pasta "gcc-2.95.2\i386-mingw32\", copie "lib" e "include" e cole em "C:\ATP\atpmingw\make\MinGW" mas não substitua os arquivos.
+
+	>>: Copie a header "stdafx.h" para a pasta C:\ATP\atpmingw\make\MinGW\include
+	
+	>>: Abra o "ATPlauncher" (deve ser encontrado na pesquisa do windows) clique em "Tools" e "Make Tpbig.exe"
+
+	>>: Certifique-se de que o caminho para "Makefile" está apontando para o arquivo "Makefile_FM" copiado anteriormente no caminho "C:\ATP\atpmingw\make"
+
+	>>: Clique em "Make" //observação: as vezes é necessario apagar todos arquivos da pasta "ATPdata\work" 
+
+	>>: Copie o arquivo "mytpbig.exe" (que foi gerado na pasta mytpbig ao compilar o ATP)  para a pasta "C:\ATP\atpmingw"
+
+	>>: Encontre o arquivo STARTUP dentro da pasta "C:\ATP\atpmingw", e modifique a opção NEWPL4 para o valor 2
+
+	>>: Copie o arquivo "runATP.bat" para a pasta "C:\ATP\Tools" 
+
+	>>: Abra o ATPDraw e vai em "Tools" "Options" "Preferences" e certifique-se de que na secção ATP está o caminho "C:\ATP\tools\runATP.bat". atenção ao final .bat
+	
+	>>: O ATP esta pronto para uso e pode ser testado com a nova função usando o arquivo fornecido em Exemplo.
+
+	>>: Ao realizar a simulação do ATP, a simulação do sistema deve para no primeiro time-step para esperar o Programa externo se conectar e permitir o inicio da simulação.
