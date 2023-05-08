@@ -22,6 +22,7 @@ Os arquivos de projeto encontran-se na pasta PNRF_ATP, sendo:
 # Arquivo instalador
 Caso pretenda apenas usar o software, na pasta instalador, é fornecido o instalador do programa. 
 É importante lembrar que é necessario instalar o "PNRF Reader Toolkit" para que o programa funcione. (https://www.hbm.com/en/2475/support-downloads-perception/)
+
 Tambem é necessario recompilar o ATP para adicionar uma função que permite a comunicação.
 
 # Reconstrução do ATP
