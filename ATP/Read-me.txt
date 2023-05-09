@@ -1,6 +1,23 @@
 
 Passo a passo para instalação completa do ATP recompilado:
 
+	>>: Inicialmente é necessario conseguir os arquivos do ATP e do ATPDraw. Para isso, pode ser realizado o download a partir de:
+		* http://www.atpdraw.net/downloads.php
+		* https://atp-emtp.org/index.php
+		% É necessario criar login e solicitar o download, uma mão danada.
+		
+	>>: Link alternalivo para download:
+		* https://drive.google.com/drive/folders/1EEChjU1s_JCsxwZsTgNMyZpzZYC6PqJT
+		% Link secundario contendo outra versão:
+			* https://drive.google.com/drive/folders/1maMLgO6xFL6DKkVTCn8XibKIuMfQIAbC
+			
+	>>: Arquivos que devem ser baixados:
+			* ATPDraw73_Install.zip
+			* InstATP124.exe
+			* InstATP124_lib.exe
+			
+	>>: Com os arquivos baixados em mãos + os arquivos da pasta "ATP", siga o passo a passo:
+	
 	>>: Instale o ATP "InstATP124.exe" no caminho "C:\ATP" (deixa todas opções marcadas)							
 	
 	>>: Instale o "ATPDraw73_Install.zip" no caminho "C:\ATP\ATPDraw" (a pasta ja vai existir, instala em cima)
